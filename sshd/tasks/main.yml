@@ -6,6 +6,10 @@
     line: "PermitRootLogin no"
     state: present
   notify: restart ssh
+  become: yes
+  become_method: sudo
+  tags:
+    - ssh
 
 - name: Disable password authentication
   lineinfile:
@@ -14,6 +18,10 @@
     line: "PasswordAuthentication no"
     state: present
   notify: restart ssh
+  become: yes
+  become_method: sudo
+  tags:
+    - ssh
 
 - name: change port number
   lineinfile:
@@ -22,3 +30,7 @@
     line: "Port {{ ssh_port }}"
     state: present
   notify: restart ssh
+  become: yes
+  become_method: sudo
+  tags:
+    - ssh
