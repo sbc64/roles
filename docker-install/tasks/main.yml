@@ -65,6 +65,9 @@
   tags:
     - docker
 
+- name: reset ssh connection
+  meta: reset_connection
+
 - name: Swarm init
   docker_swarm:
     state: present
