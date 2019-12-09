@@ -59,7 +59,7 @@
 - name: Install Docker API
   pip:
     name: ['docker', 'jsondiff', 'pyyaml']
-    executable: pip2
+    executable: pip3
   become: yes
   become_method: sudo
   tags:
