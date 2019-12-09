@@ -1,0 +1,10 @@
+---
+- name: Enable ipv4 forward
+  sysctl:
+    name: net.ipv4.ip_forward
+    value: '1'
+    sysctl_set: yes
+  become: yes
+  become_method: sudo
+  tags:
+    - sysctl
