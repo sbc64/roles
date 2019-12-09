@@ -8,11 +8,15 @@
   become_method: su
   become_user: "{{ username }}"
   tags:
-    - eth-tests-nets
+    - eth-docker
 
-- name: 
-  docker_stack:
-    state: present
-    name: eth-testnets
-    compose:
-      - "{{ repo_path }}/docker/ethereums-testnets.yml"
+- name: Start stack
+  shell: make
+  args:
+    chdir: "{{ repo_path }}"
+  become: yes
+  become_method: su
+  become_user: "{{ username }}"
+  tags:
+    - eth-docker
+
