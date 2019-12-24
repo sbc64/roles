@@ -1,0 +1,4 @@
+---
+username: root
+public_key: ~/.ssh/id_ed25519.pub
+dotfiles: "/root/.dotfiles"
